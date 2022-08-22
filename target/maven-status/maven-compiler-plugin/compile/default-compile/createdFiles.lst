@@ -1,0 +1,5 @@
+com\example\quartz\job\AJob.class
+com\example\quartz\job\ConfigureJob.class
+com\example\quartz\SampleQuartzApplication.class
+com\example\quartz\service\AService.class
+com\example\quartz\job\BJob.class

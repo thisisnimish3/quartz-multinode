@@ -1,0 +1,46 @@
+spring:
+    quartz:
+        properties:
+            org:
+                quartz:
+                    jobStore:
+                        driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+                        isClustered: 'true'
+                    scheduler:
+                        instanceId: AUTO
+        job-store-type: jdbc
+        overwrite-existing-jobs: 'true'
+    datasource:
+        url: jdbc:postgresql://localhost:5432/quartztest
+        username: postgres
+        password: password
+    batch:
+        jdbc:
+            initialize-schema: "always"
+
+
+    jpa:
+        hibernate.ddl-auto: update
+        show-sql: true
+        properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+        properties.hibernate.format_sql: true
+        properties.hibernate.jdbc.time_zone: UTC
+
+#org:
+#    quartz:
+#        jobStore:
+#            useProperties: 'false'
+#            dataSource: myDS
+#            isClustered: 'true'
+#            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+#            tablePrefix: QRTZ_
+#            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#        dataSource:
+#            myDS:
+#                user: quartz
+#                validationQuery: ''
+#                URL: jdbc:postgresql://localhost:5432/quartz
+#                driver: org.postgresql.Driver
+#                password: quartz
+#                maxConnections: '5'
+#
